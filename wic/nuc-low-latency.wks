@@ -1,0 +1,7 @@
+# short-description: Create an EFI disk image with a 10G data partition
+# long-description: Creates a partitioned disk image for Intel NUC with
+# an EFI boot partition, a rootfs partition, and a 10G data partition.
+
+part /boot --source bootimg-efi --sourceparams="loader=grub-efi" --ondisk sda --label msdos --active --align 1024
+part / --source rootfs --ondisk sda --fstype=ext4 --label platform --align 1024 --use-uuid
+part /data --ondisk sda --size 10240 --fstype=ext4 --label data --align 1024 --use-uuid
