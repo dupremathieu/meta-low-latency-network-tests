@@ -9,6 +9,7 @@ IMAGE_INSTALL += " \
     docker-moby \
     docker-compose \
     bittwist \
+    sv-pcap-generator \
     "
 
 # Add some useful tools for networking tests
